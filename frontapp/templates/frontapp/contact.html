@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Contact{% endblock %}</title>
+  </head>
+  <body>
+      {% block content %}
+      <div class="row">
+
+        <div class="col"></div>
+
+        <div class="col">
+          <div class="border border-secondary border-2 rounded-3 p-4 m-4">
+          <h2>Contact</h2>
+          <hr>  
+
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Prashant_Das_9953945411" class="rounded mx-auto d-block" alt="QR Code not loaded">
+          <br>
+          <p>
+            Prashant Das
+          </p>
+          <p>prashantprashant@hotmail.com</p>
+          <p>99 53 94 54 11</p>
+          </div>
+        </div>
+
+        <div class="col"></div>
+
+
+      </div>
+   
+    {% endblock %}
+  </body>
+</html>

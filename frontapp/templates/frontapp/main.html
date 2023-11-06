@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Bangalore{% endblock %}</title>
+  </head>
+  <body>
+      {% block content %}
+      <div class="row">
+        <div class="col">
+          <div class="border border-secondary border-2 rounded-3 p-4 m-4">
+            
+          <h2>Enter Details of Property</h2>
+          <hr>
+          <form action="." method="post">
+            {% csrf_token %}
+            {{ that_form.location|as_crispy_field }}
+            <div class="row">
+              <div class="col-6">
+                {{ that_form.bhk|as_crispy_field }}
+              </div>
+              <div class="col-6">
+                {{ that_form.sqft|as_crispy_field }}
+              </div>
+            </div>            
+            <button class="btn btn-primary" type="submit">Estimate</button>
+          </form>          
+          </div>
+
+
+          <div class="border border-secondary border-2 rounded-3 p-4 m-4">
+            <h2>Result</h2>
+            <hr>
+          response: {{ data }}
+          <br>
+          </div>
+
+
+
+        </div>
+        <div class="col">
+          <div class="border border-secondary border-2 rounded-3 p-4 m-4">
+          <h2>Methodology</h2>
+          <hr>
+          <p class="text-break">
+            At the heart of this algorithm is a model that has already performed Random Forest Regression to learn the relationship between the
+            location of the property, number of bedrooms, the square-feet of the property and the corresponding price of the property from twelve thousand records of 
+            houses with number of rooms ranging from one to ten. These houses are spread across various locations in Bangalore, Karnataka.
+          </p>
+          <p class="text-break">
+            In essence the algorithm on this website does not perform Regression on the go. The data entered via this form is fed to the model which plots it along the three independent axes of 'location', 'bhk' and 'sqft' and the corresponding value
+            from the fourth, dependent axis i.e. price is presented as an estimate.
+          </p>
+          </div>
+        </div>
+      </div>
+   
+    {% endblock %}
+  </body>
+</html>
