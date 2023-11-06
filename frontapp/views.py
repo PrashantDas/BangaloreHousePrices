@@ -9,7 +9,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.compose import make_column_transformer
 
 import pickle
-pickled_Model = pickle.load(open('Model_rfr_Bangalore2023.pkl', 'rb'))
+pickled_Model = pickle.load(open('Model_rfr_Bangalore2023small.pkl', 'rb'))
 
 # Create your views here.
 def face(request):
